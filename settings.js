@@ -7,18 +7,15 @@ const config = {
         dataPath: 'data/jsonData', // 数据存放路径
         mode: 'file'
     }
-}['mock'] // 获取模式为 mock的配置文件
-
+}['file'] // 获取模式为 mock的配置文件
 
 module.exports = {
     // 启动端口配置
     port: 9878,
+    // 主机地址
     host: '127.0.0.1',
-    // 接口根目录
-    contextPath: '/api',
+    // 项目根目录
+    contextPath: '/blog',
     // 上面基础配置映射
     ...config
-    // 数据存放位置
-    // dataPath: 'data',
-    // mode: 'mock' // mock | file 当使用file时采用的static json 要用json导出api ;mock 采用的是 mock 解析模拟数据 要用js文件导出api 
 }
