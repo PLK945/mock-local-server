@@ -8,7 +8,8 @@ const { contextPath } = require('../settings')
 module.exports = (req,resp) => {
     try{
         const url = req.url.substring(1)
-        resp.json(util.getJsonByUrlPath(url))
+        const data = util.getJsonByUrlPath(url)
+        resp.json(util.success(data))
     }catch(e) {
         let res = {}
         if (e.message.indexOf('Cannot find')>=0) {

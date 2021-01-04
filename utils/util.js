@@ -46,7 +46,7 @@ exports.parseMockData = (template) => {
 /**
  * 遍历文件
  */
-exports.walkSync = (currentDirPath, files) => {
+const walkSync = (currentDirPath, files) => {
     fs.readdirSync(currentDirPath).forEach(function (name) {
         var filePath = resolve(currentDirPath, name);
         var stat = fs.statSync(filePath);
@@ -58,6 +58,7 @@ exports.walkSync = (currentDirPath, files) => {
     });
 }
 
+exports.walkSync = walkSync
 
 exports.getFilesPath = (path) => {
     const files = [] 
@@ -100,4 +101,12 @@ exports.error = {
             message:`请检查服务端代码问题：${msg?msg:'Internal Server Error'}`
         }
     }   
+}
+
+exports.success = (data) => {
+    return {
+        code: 200,
+        message: 'request:ok',
+        data: data.data ||  data
+    }
 }

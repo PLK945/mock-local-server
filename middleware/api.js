@@ -9,7 +9,7 @@ const template = (suffix) => {
     const apis = []
     const paths = util.getFilesPath(resolve(__dirname,`../${dataPath}`))
     paths.forEach(path=>{
-        let api = path.substring(path.indexOf(dataPath.replace('/','\\'))+dataPath.length).replace('\\','/').replace(suffix,'')
+        let api = path.substring(path.indexOf(dataPath.replace('/','\\'))+dataPath.length).replace('\\','/').replace(suffix,'').replace('\\','/')
         apis.push({api:`http:${host}:${port}${contextPath}`+api,href:`${contextPath}${api}`})
     })
     return apis

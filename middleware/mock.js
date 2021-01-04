@@ -11,7 +11,7 @@ module.exports = (req,resp) => {
         const obj = util.requireJsData(url)
         // 解析模拟数据
         const mockData = util.parseMockData(obj)
-        resp.json(mockData)
+        resp.json(util.success(mockData))
     }catch(e) {
         let res = {}
         if (e.message.indexOf('Cannot find')>=0) {
