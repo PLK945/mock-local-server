@@ -4,8 +4,8 @@
 ```json
 {
     port: 9878,           // 启动端口配置
-    host: '127.0.0.1',    // 接口根目录
-    contextPath: '/api',  // 上面基础配置映射
+    host: '127.0.0.1',    // 主机地址
+    contextPath: '/api',  // 接口根目录
     dataPath: 'data/jsonData',     //  数据存放位置
     mode: 'mock'          // mock | file 当使用file时用.json文件导出api ;mock 采用的是 mock 解析模拟数据要用.js文件导出api 
 }
